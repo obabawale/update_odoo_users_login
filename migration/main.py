@@ -17,7 +17,7 @@ def update_models(models, db, uid, password) -> None:
         for record in records:
             # Before update
             print("Before...", record[field])
-            
+
             if not 'asseco.ng' in record[field]:
                 continue
 
@@ -31,7 +31,7 @@ def update_models(models, db, uid, password) -> None:
             # after update
             [emp] = models.execute_kw(db, uid, password, Model, 'search_read', [
                 [['id', '=', record['id']]]], {'fields': ['name', field]})
-            
+
             print(f"After..., {emp[field]}")
     return True
 
