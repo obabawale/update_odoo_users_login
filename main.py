@@ -5,6 +5,7 @@ from connector import connector
 
 
 def update_models(models, db, uid, password) -> None:
+    """This function updates users, partners and employee information"""
     models_to_update = [
         ('res.users', 'email'),
         ('res.partner', 'email'),
